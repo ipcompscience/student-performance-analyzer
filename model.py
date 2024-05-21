@@ -112,21 +112,6 @@ st.divider()
 st.header("Graphs")
 # graphs from below
 
-# scatter graph 1
-scatterplot_val = sbrn.scatterplot(x='reading_score', 
-                y='math_score', data=data_var)
-
-st.pyplot(scatterplot_val.get_figure(), 1, 0)
-plt.close()
-
-# scatter graph 2
-scatterplot_val = sbrn.scatterplot(x='writing_score', 
-                y='math_score', data=data_var)
-
-st.pyplot(scatterplot_val.get_figure(), 1, 0)
-plt.close()
-
-
 # Group by 'parental_level_of_education' and calculate the average math score
 average_scores = data_var.groupby('parental_level_of_education')['math_score'].mean()
 
@@ -158,6 +143,22 @@ plt.grid(axis='y', linestyle='--', alpha=0.7)
 # plt.show()
 st.pyplot(plt.gcf(), 1, 0)
 plt.close()
+
+
+# scatter graph 1
+scatterplot_val = sbrn.scatterplot(x='reading_score', 
+                y='math_score', data=data_var)
+
+st.pyplot(scatterplot_val.get_figure(), 1, 0)
+plt.close()
+
+# scatter graph 2
+scatterplot_val = sbrn.scatterplot(x='writing_score', 
+                y='math_score', data=data_var)
+
+st.pyplot(scatterplot_val.get_figure(), 1, 0)
+plt.close()
+
 
 
 # End
